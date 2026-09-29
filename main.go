@@ -64,7 +64,7 @@ type ProductionProduct struct {
 	ProductID    int `json:"product_id" db:"product_id"`
 }
 
-// ---------- РЕПОЗИТОРИЙ (работа с БД) ----------
+// ---------- РЕПОЗИТОРИЙ ----------
 
 type Repository struct {
 	db *sqlx.DB
@@ -971,8 +971,8 @@ func GetProductionProductsHandler(repo *Repository) http.HandlerFunc {
 // ---------- ГЛАВНАЯ ФУНКЦИЯ ----------
 
 func main() {
-	// Подключение к БД (измените на свою)
-	dsn := "root:root@tcp(127.0.0.1:3307)/factory?parseTime=true"
+	// Подключение к БД
+	dsn := "root:1234@tcp(127.0.0.1:3306)/factory?parseTime=true"
 
 	db, err := sqlx.Connect("mysql", dsn)
 	if err != nil {
